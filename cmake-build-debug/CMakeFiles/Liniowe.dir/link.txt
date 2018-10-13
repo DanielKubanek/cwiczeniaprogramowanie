@@ -1,0 +1,1 @@
+/usr/bin/gcc -g   CMakeFiles/Liniowe.dir/main.c.o  -o Liniowe -lm 
