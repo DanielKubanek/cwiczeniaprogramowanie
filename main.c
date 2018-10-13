@@ -7,6 +7,7 @@ void Rownania();
 void Delta();
 void Menu();
 void silnia();
+void kalkulator();
 
 int main(){
 
@@ -33,12 +34,12 @@ int main(){
                 system("clear");
                 Menu();
                 break;
-            case 4:
-                Rownania();
-                system("clear");
-                Menu();
-                break;
             case 5:
+                 kalkulator();
+
+               Menu();
+                break;
+            case 4:
                 Rownania();
                 system("clear");
                 Menu();
@@ -49,6 +50,10 @@ int main(){
                 system("clear");
                 Menu();
                 break;
+            //default:
+              //  printf("Darek nie kombinuj wpisz poprawnie\n");
+                //scanf(" %c", &wyb);
+                //break;
         }
     }    while(wyb!=9);
 
@@ -64,7 +69,7 @@ void Menu() {
     printf("................................CWICZENIA WSPOL............................\n");
     printf(".............................Wybierz co chcesz obliczyć.........................\n");
     printf("1.Układ równań\t\t 2.Równanie kwadratowe\t\t3. Silnia\n");
-    printf("4.Silnia na forze\t\t 5.Wyswietlanie elementów ciągu Fibonacciego\n");
+    printf("4.Kalkulator działań prostych\t\t 5.Wyswietlanie elementów ciągu Fibonacciego\n");
     printf("6.CHAR-> ASCII \t\t9.Wyjście z programu\n");
 }
 
@@ -183,4 +188,58 @@ void silnia (){
             scanf("%lf", &odp);
     }while(odp!=2);
 
+}
+
+void kalkulator()
+{
+   // system("clear");
+   system("clear");
+    double a,b,suma,roznica,iloczyn,iloraz;
+    char wybor;
+    printf("Podaj co chcesz zrobić 1. dodać 2.odjąć 3.pomnożyć 4.podzielić 9.wyjść\n");
+
+        do{
+            scanf("%c", &wybor);
+           switch(wybor){
+
+                case'1':
+                            printf("Podaj a");
+                            scanf("%lf", &a);
+                            printf("Podaj b");
+                            scanf("%lf", &b);
+                            suma=a+b;
+                            printf("%lf", suma);
+                            break;
+                case'2':
+                    printf("Podaj a");
+                    scanf("%lf", &a);
+                    printf("Podaj b");
+                    scanf("%lf", &b);
+                    roznica=a-b;
+                    printf("%lf", roznica);
+                    break;
+                case'3':
+                    printf("Podaj a");
+                    scanf("%lf", &a);
+                    printf("Podaj b");
+                    scanf("%lf", &b);
+                    iloraz=a*b;
+                    printf("%lf", iloraz);
+                    break;
+                case'4':
+                    printf("Podaj a");
+                    scanf("%lf", &a);
+                    printf("Podaj b");
+                    scanf("%lf", &b);
+                    if(b==0) {
+                        printf("Nie dziel cholero przez zero!!!");
+                        break;
+                    }
+                    else
+                    iloczyn=a/b;
+                    printf("%lf", iloczyn);
+                    break;
+            }
+
+        }while(wybor!=9);
 }
